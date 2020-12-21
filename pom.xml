@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.breizhvideo</groupId>
 	<artifactId>ontheroad</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>ontheroad</name>
 	<description>Back for BreizhVideo OnTheRoad</description>
 
