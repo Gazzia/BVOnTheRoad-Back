@@ -1,6 +1,6 @@
 package com.breizhvideo.ontheroad.model;
 
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
 

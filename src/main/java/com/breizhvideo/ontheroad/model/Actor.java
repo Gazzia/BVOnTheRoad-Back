@@ -1,10 +1,9 @@
 package com.breizhvideo.ontheroad.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
