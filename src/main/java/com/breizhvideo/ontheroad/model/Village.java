@@ -1,6 +1,5 @@
 package com.breizhvideo.ontheroad.model;
 
-
 import javax.persistence.*;
 
 @Entity
@@ -41,4 +40,5 @@ public class Village {
     public void setPostCode(String postCode) {
         this.postCode = postCode;
     }
+
 }
