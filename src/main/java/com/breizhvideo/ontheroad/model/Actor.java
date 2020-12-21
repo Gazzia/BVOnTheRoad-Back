@@ -1,43 +1,25 @@
 package com.breizhvideo.ontheroad.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="actor")
+@Data
 public class Actor {
     @Id
-    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="first_name")
-    public Date firstName;
+    public String firstName;
 
-    @Column(name="last_name")
-    public Date lastName;
+    public String lastName;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(Date firstName) {
-        this.firstName = firstName;
-    }
-
-    public Date getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(Date lastName) {
-        this.lastName = lastName;
-    }
+    @ManyToMany(mappedBy = "actors")
+    @JsonIgnore
+    private List<Film> films;
 }
