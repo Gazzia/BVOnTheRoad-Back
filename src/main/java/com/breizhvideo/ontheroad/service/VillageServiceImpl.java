@@ -15,8 +15,11 @@ public class VillageServiceImpl implements VillageService{
     private VillageRepository repository;
 
     @Override
-    public List<Village> listVillages() {
-        return repository.findAll();
+    public List<Village> listVillages(String search) {
+        if(!"".equals(search))
+            return repository.findByNameContaining(search);
+        else
+            return repository.findAll();
     }
 
     @Override

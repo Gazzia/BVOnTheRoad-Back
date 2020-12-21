@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 @Transactional
 public interface VillageService {
-    List<Village> listVillages();
+    List<Village> listVillages(String search);
     Optional<Village> getVillage(Long id);
     Village insertVillage(Village Village);
     Village updateVillage(Long id, Village Village);

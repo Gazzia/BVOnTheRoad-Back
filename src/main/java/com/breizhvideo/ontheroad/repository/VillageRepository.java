@@ -9,5 +9,4 @@ import java.util.List;
 @Repository
 public interface VillageRepository extends JpaRepository<Village, Long> {
     List<Village> findByNameContaining(String name);
-    List<Village> findByPostCodeContaining(String postCode);
 }

@@ -3,7 +3,6 @@ package com.breizhvideo.ontheroad.controller;
 import com.breizhvideo.ontheroad.model.Village;
 import com.breizhvideo.ontheroad.service.VillageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +17,17 @@ public class VillageController {
 
     @GetMapping("/villages")
     public List<Village> getVillages(){
-        return villageService.listVillages();
+        return villageService.listVillages("");
+    }
+
+    public ResponseEntity<List<Village>> getVillages(@RequestParam(value = "search", defaultValue = "") String search){
+        List<Village> listVillage;
+        try{
+            listVillage = villageService.listVillages(search);
+        } catch (Exception e){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok().body(listVillage);
     }
 
     @GetMapping("/villages/{id}")
