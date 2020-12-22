@@ -16,4 +16,6 @@ public class Village {
     private String name;
 
     private String postCode;
+
+    private String imageUrl;
 }
